@@ -1,0 +1,10 @@
+.logoBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.firstRow{
+    display: flex;
+    align-items: end;
+}

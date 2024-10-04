@@ -1,0 +1,12 @@
+.imageBox{
+    position: relative;
+}
+
+.border{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: transparent;
+    border: 1px solid white;
+    z-index: -1;
+}

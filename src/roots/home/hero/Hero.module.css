@@ -1,0 +1,64 @@
+.hero{
+    padding: 0 20px;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../../../assets/background/MainBackground.jpg");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+.hero__container{
+    margin: 96px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-btn{
+    min-width: 159px;
+    width: 159px;
+    height: 69px;
+    border: 1px solid white;
+    border-radius: 40px;
+    background: transparent;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+
+    font-size: 20px;
+    font-weight: 510;
+    line-height: 31px;
+    text-align: center;
+    color: white;
+}
+
+.hero__actions{
+    margin-top: 115px;
+    max-width: 845px;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.hero__links{
+    margin-top: 192px;
+    max-width: 1190px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero__link{
+    font-size: 24px;
+    font-weight: 510;
+    line-height: 31px;
+    text-align: center;
+    color: white;
+}

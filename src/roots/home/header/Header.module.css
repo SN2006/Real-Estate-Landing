@@ -1,0 +1,38 @@
+.header{
+    width: 100%;
+    padding: 23px 53px;
+    display: flex;
+    align-items: center;
+}
+
+.logoBox{
+    display: flex;
+    gap: 13px;
+    margin-right: calc((100% - 272px) / 10);
+    cursor: pointer;
+}
+
+nav{
+    width: 100%;
+}
+
+.nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav__link{
+    white-space: nowrap;
+    font-size: 20px;
+    font-weight: 274;
+    line-height: 31px;
+    transition: ease-in 0.3s;
+    color: white;
+}
+
+.line{
+    width: 100%;
+    height: 1px;
+    background: white;
+}
