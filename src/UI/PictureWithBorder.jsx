@@ -1,20 +1,16 @@
 import styles from "./PictureWithBorder.module.css"
-import PropTypes from "prop-types";
 
-const PictureWithBorder = ({src, left, top}) => {
-    return <div className={styles.imageBox}>
-        <img src={src} alt="house"/>
+const PictureWithBorder = ({src, srcW, left, top, hidden}) => {
+    return <div className={styles.imageBox + (hidden ? styles.hidden : "")}>
+        <picture>
+            <source className={styles['img']} type="image/webp" srcSet={srcW}/>
+            <img className={styles['img']} src={src} alt="house"/>
+        </picture>
         <div
             className={styles.border}
             style={{left: `${left}px`, top: `${top}px`}}
         ></div>
     </div>
-}
-
-PictureWithBorder.propsType = {
-    src: PropTypes.string.isRequired,
-    left: PropTypes.number,
-    top: PropTypes.number,
 }
 
 export default PictureWithBorder;

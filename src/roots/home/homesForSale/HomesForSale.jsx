@@ -2,15 +2,6 @@ import styles from "./HomesForSale.module.css"
 import titleImg from "../../../assets/titles/HousesHeader.svg"
 import PropTypes from "prop-types";
 import {motion} from "framer-motion";
-import house1 from "../../../assets/houses/Houses1.jpg"
-import house2 from "../../../assets/houses/Houses2.jpg"
-import house3 from "../../../assets/houses/Houses3.jpg"
-import house4 from "../../../assets/houses/Houses4.jpg"
-import house5 from "../../../assets/houses/Houses5.jpg"
-import house6 from "../../../assets/houses/Houses6.jpg"
-import house7 from "../../../assets/houses/Houses7.jpg"
-import house8 from "../../../assets/houses/Houses8.jpg"
-import house9 from "../../../assets/houses/Houses9.jpg"
 import leftArrow from "../../../assets/icons/LeftArrow.svg"
 import rightArrow from "../../../assets/icons/RightArrow.svg"
 
@@ -18,65 +9,75 @@ import {useState} from "react";
 
 const houses_info = [
     {
-        src: house1,
+        src: "\\src/assets/houses/Houses1.jpg",
+        srcW: "\\src/assets/houses/Houses1.webp",
         title: "House Tampa",
         price: "$ 3 500 000",
         description: "6-room private house, high ceilings, panoramic windows - such objects are very complex as you need to calculate every detail and make everything perfect. The house is modern renovation. Warm floors that will not let you freeze in winter. Each room has a unique design that the best designers have worked on.",
     },
     {
-        src: house2,
+        src: "\\src/assets/houses/Houses2.jpg",
+        srcW: "\\src/assets/houses/Houses2.webp",
         title: "Penthouse Orlndo",
         price: "$ 4 750 000",
         description: "5-room private house in eco style. The house is located in a large cottage village near the forest, the air is always clean. The house is built with natural eco-friendly materials. Panoramic windows give a lot of light into the house. Rich luxury hidden in small details. There is a place for plants on the territory.",
     },
     {
-        src: house3,
+        src: "\\src/assets/houses/Houses3.jpg",
+        srcW: "\\src/assets/houses/Houses3.webp",
         title: "House Sarasota",
         price: "$ 2 990 000",
         description: "Featuring spacious 5 rooms filled with natural light, the property includes a large living area, a fully equipped kitchen, multiple bedrooms, and bathrooms. Outside, enjoy a well-maintained garden and a private parking space.  Ideal for families a peaceful retreat, this home is located in a quiet, safe neighborhood.",
     },
     {
-        src: house4,
+        src: "\\src/assets/houses/Houses4.jpg",
+        srcW: "\\src/assets/houses/Houses4.webp",
         title: "House Florida",
         price: "$ 5 545 000",
         description: "This private house for sale offers a perfect blend of comfort and modern living. Featuring spacious rooms filled with natural light, the property includes a large living area, a fully equipped kitchen, multiple bedrooms, and bathrooms. Outside, enjoy a well-maintained garden and a private parking space.",
     },
     {
-        src: house5,
+        src: "\\src/assets/houses/Houses5.jpg",
+        srcW: "\\src/assets/houses/Houses5.webp",
         title: "House Key West",
         price: "$ 4 700 000",
         description: "This stunning modern home is designed for both comfort and style, with an expansive open floor plan and floor-to-ceiling windows that maximize light and views. The sleek kitchen, spa-like bathrooms, and energy-efficient features make this a dream home for the discerning buyer.",
     },
     {
-        src: house6,
+        src: "\\src/assets/houses/Houses6.jpg",
+        srcW: "\\src/assets/houses/Houses6.webp",
         title: "House Miami",
         price: "$ 7 200 000",
         description: "Experience the future of living in this ultra-modern home equipped with the latest smart home technology. From automated lighting and climate control to advanced security systems, this residence offers unparalleled convenience and luxury. Every detail has been meticulously crafted for a high-end, modern lifestyle.",
     },
     {
-        src: house7,
+        src: "\\src/assets/houses/Houses7.jpg",
+        srcW: "\\src/assets/houses/Houses7.webp",
         title: "House Boca Raton",
         price: "$ 4 900 000",
         description: "A unique blend of indoor and outdoor living, this modern home features an expansive deck and landscaped garden, perfect for entertaining or relaxing. The sleek interior offers a seamless flow between living spaces, with cutting-edge finishes and a bright, airy feel throughout. Made with special design.",
     },
     {
-        src: house8,
+        src: "\\src/assets/houses/Houses8.jpg",
+        srcW: "\\src/assets/houses/Houses8.webp",
         title: "Penthouse Jacksonville",
         price: "$ 4 900 000",
         description: "Step into a world of modern luxury with this private home. Featuring state-of-the-art appliances, spacious living areas, and a minimalist design, this residence offers the ideal blend of sophistication and convenience. Enjoy peaceful living in this quiet neighborhood, just minutes away from top city attractions.",
     },
     {
-        src: house9,
+        src: "\\src/assets/houses/Houses9.jpg",
+        srcW: "\\src/assets/houses/Houses9.webp",
         title: "Penthouse Naples",
         price: "$ 2 750 000",
         description: "This contemporary home boasts a cutting-edge design, offering clean lines, open spaces, and luxurious finishes. With large windows, natural light floods the interiors, highlighting the elegant details throughout. Perfect for those seeking a combination of comfort, style, and functionality.",
     },
 ]
 
-const HouseCard = ({src, title, price, description}) => {
+const HouseCard = ({src, srcW, key, title, price, description}) => {
     const [isHover, setIsHover] = useState(false);
 
     return <motion.div
+        key={key}
         className={styles['house-card']}
         onHoverStart={() => setIsHover(true)}
         onHoverEnd={() => setIsHover(false)}
@@ -86,7 +87,10 @@ const HouseCard = ({src, title, price, description}) => {
             animate={isHover ? {opacity: 0} : {opacity: 1}}
         >
             <div className={styles['house-card__imagebox']}>
-                <img src={src} alt={title}/>
+                <picture>
+                    <source type="image/webp" srcSet={srcW}/>
+                    <img src={src} alt={title}/>
+                </picture>
             </div>
             <div className={styles['house-card__info']}>
                 <p className={styles['house-card__title']}>{title}</p>
@@ -156,6 +160,7 @@ const Carousel = () => {
             >
                 {houses_info.map((item, index) => <HouseCard
                     src={item.src}
+                    srcW={item.srcW}
                     key={index}
                     title={item.title}
                     description={item.description}

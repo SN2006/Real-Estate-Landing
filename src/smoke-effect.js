@@ -370,8 +370,6 @@ function splat( x, y, dx, dy, color ) {
     gl.uniform3f( splatProgram.uniforms.color, color[ 0 ] * 0.3, color[ 1 ] * 0.3, color[ 2 ] * 0.3 );
     blit( density.second[ 1 ] );
     density.swap();
-
-    console.log("fkdkdfk")
 }
 
 function resizeCanvas() {
