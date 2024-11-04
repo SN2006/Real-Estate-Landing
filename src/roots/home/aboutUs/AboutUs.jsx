@@ -1,6 +1,22 @@
 import styles from "./AboutUs.module.css"
 import headerImg from "../../../assets/titles/AboutUsHeader.svg"
 import PictureWithBorder from "../../../UI/PictureWithBorder.jsx";
+import houseImg1 from "../../../assets/houses/AboutUsHouse1.jpg"
+import houseImg2 from "../../../assets/houses/AboutUsHouse2.jpg"
+import houseImg1W from "../../../assets/houses/AboutUsHouse1.webp"
+import houseImg2W from "../../../assets/houses/AboutUsHouse2.webp"
+import firstGallery from "../../../assets/gallery/0.jpg"
+import firstGalleryW from "../../../assets/gallery/0.webp"
+import p1 from "../../../assets/gallery/1.jpg"
+import p1W from "../../../assets/gallery/1.webp"
+import p2 from "../../../assets/gallery/2.jpg"
+import p2W from "../../../assets/gallery/2.webp"
+import p3 from "../../../assets/gallery/3.jpg"
+import p3W from "../../../assets/gallery/3.webp"
+import p4 from "../../../assets/gallery/4.jpg"
+import p4W from "../../../assets/gallery/4.webp"
+import p5 from "../../../assets/gallery/5.jpg"
+import p5W from "../../../assets/gallery/5.webp"
 import {motion} from "framer-motion";
 import {useEffect, useState} from "react";
 
@@ -33,30 +49,40 @@ const galleryStates = [
         endRotate: -100,
         x: 84,
         y: -84,
+        src: p1,
+        srcW: p1W,
     },
     {
         startRotate: -5,
         endRotate: 162,
         x: -62,
         y: 62,
+        src: p2,
+        srcW: p2W,
     },
     {
         startRotate: -11,
         endRotate: -146,
         x: 22,
         y: 22,
+        src: p3,
+        srcW: p3W,
     },
     {
         startRotate: 6,
         endRotate: 90,
         x: -98,
         y: -98,
+        src: p4,
+        srcW: p4W,
     },
     {
         startRotate: 0,
         endRotate: -80,
         x: 76,
         y: -76,
+        src: p5,
+        srcW: p5W,
     }
 ]
 
@@ -88,18 +114,18 @@ const AboutUs = () => {
                         Our goal is to simplify the process and ensure that your experience is as smooth and stress-free
                         as possible, no matter your needs or budget.</p>
                     <div className={styles["about-us__img1"]}>
-                        <PictureWithBorder src={'\\src/assets/houses/AboutUsHouse1.jpg'} srcW={'src/assets/houses/AboutUsHouse1.webp'} left={17} top={17}/>
+                        <PictureWithBorder src={houseImg1} srcW={houseImg1W} left={17} top={17}/>
                     </div>
                 </div>
                 <div className={styles["about-us__img2"]}>
-                    <PictureWithBorder src={'\\src/assets/houses/AboutUsHouse2.jpg'} srcW={'\\src/assets/houses/AboutUsHouse2.webp'} left={-17} top={17}/>
+                    <PictureWithBorder src={houseImg2} srcW={houseImg2W} left={-17} top={17}/>
                 </div>
             </div>
             <div className={styles["about-us__gallery"]} onClick={decrementGalleryCurrent}>
                 <div className={styles["about-us__gallery__img-container"]}>
                     <picture>
-                        <source className={styles['about-us__gallery__img']} type="image/webp" srcSet={'\\src/assets/gallery/0.webp'}/>
-                        <img className={styles['about-us__gallery__img']} src={'\\src/assets/gallery/0.jpg'} alt="Gallery First"/>
+                        <source className={styles['about-us__gallery__img']} type="image/webp" srcSet={firstGalleryW}/>
+                        <img className={styles['about-us__gallery__img']} src={firstGallery} alt="Gallery First"/>
                     </picture>
                 </div>
                 {[1, 2, 3, 4, 5].map(value => {
@@ -120,10 +146,14 @@ const AboutUs = () => {
                         className={styles["about-us__gallery__img-container"] + " " +
                             styles["about-us__gallery__img-container--absolute"]}>
                         <picture>
-                            <source className={styles['about-us__gallery__img']} type="image/webp" srcSet={`\\src/assets/gallery/${value}.webp`}/>
+                            <source
+                                className={styles['about-us__gallery__img']}
+                                type="image/webp"
+                                srcSet={galleryStates[value].srcW}
+                            />
                             <img
                                 className={styles['about-us__gallery__img']}
-                                src={`\\src/assets/gallery/${value}.jpg`}
+                                src={galleryStates[value].src}
                                 alt="Gallery First"
                             />
                         </picture>

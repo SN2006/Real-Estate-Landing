@@ -4,69 +4,87 @@ import PropTypes from "prop-types";
 import {motion} from "framer-motion";
 import leftArrow from "../../../assets/icons/LeftArrow.svg"
 import rightArrow from "../../../assets/icons/RightArrow.svg"
+import house1 from "../../../assets/houses/Houses1.jpg"
+import house2 from "../../../assets/houses/Houses2.jpg"
+import house3 from "../../../assets/houses/Houses3.jpg"
+import house4 from "../../../assets/houses/Houses4.jpg"
+import house5 from "../../../assets/houses/Houses5.jpg"
+import house6 from "../../../assets/houses/Houses6.jpg"
+import house7 from "../../../assets/houses/Houses7.jpg"
+import house8 from "../../../assets/houses/Houses8.jpg"
+import house9 from "../../../assets/houses/Houses9.jpg"
+import house1W from "../../../assets/houses/Houses1.webp"
+import house2W from "../../../assets/houses/Houses2.webp"
+import house3W from "../../../assets/houses/Houses3.webp"
+import house4W from "../../../assets/houses/Houses4.webp"
+import house5W from "../../../assets/houses/Houses5.webp"
+import house6W from "../../../assets/houses/Houses6.webp"
+import house7W from "../../../assets/houses/Houses7.webp"
+import house8W from "../../../assets/houses/Houses8.webp"
+import house9W from "../../../assets/houses/Houses9.webp"
 
 import {useState} from "react";
 
 const houses_info = [
     {
-        src: "\\src/assets/houses/Houses1.jpg",
-        srcW: "\\src/assets/houses/Houses1.webp",
+        src: house1,
+        srcW: house1W,
         title: "House Tampa",
         price: "$ 3 500 000",
         description: "6-room private house, high ceilings, panoramic windows - such objects are very complex as you need to calculate every detail and make everything perfect. The house is modern renovation. Warm floors that will not let you freeze in winter. Each room has a unique design that the best designers have worked on.",
     },
     {
-        src: "\\src/assets/houses/Houses2.jpg",
-        srcW: "\\src/assets/houses/Houses2.webp",
+        src: house2,
+        srcW: house2W,
         title: "Penthouse Orlndo",
         price: "$ 4 750 000",
         description: "5-room private house in eco style. The house is located in a large cottage village near the forest, the air is always clean. The house is built with natural eco-friendly materials. Panoramic windows give a lot of light into the house. Rich luxury hidden in small details. There is a place for plants on the territory.",
     },
     {
-        src: "\\src/assets/houses/Houses3.jpg",
-        srcW: "\\src/assets/houses/Houses3.webp",
+        src: house3,
+        srcW: house3W,
         title: "House Sarasota",
         price: "$ 2 990 000",
         description: "Featuring spacious 5 rooms filled with natural light, the property includes a large living area, a fully equipped kitchen, multiple bedrooms, and bathrooms. Outside, enjoy a well-maintained garden and a private parking space.  Ideal for families a peaceful retreat, this home is located in a quiet, safe neighborhood.",
     },
     {
-        src: "\\src/assets/houses/Houses4.jpg",
-        srcW: "\\src/assets/houses/Houses4.webp",
+        src: house4,
+        srcW: house4W,
         title: "House Florida",
         price: "$ 5 545 000",
         description: "This private house for sale offers a perfect blend of comfort and modern living. Featuring spacious rooms filled with natural light, the property includes a large living area, a fully equipped kitchen, multiple bedrooms, and bathrooms. Outside, enjoy a well-maintained garden and a private parking space.",
     },
     {
-        src: "\\src/assets/houses/Houses5.jpg",
-        srcW: "\\src/assets/houses/Houses5.webp",
+        src: house5,
+        srcW: house5W,
         title: "House Key West",
         price: "$ 4 700 000",
         description: "This stunning modern home is designed for both comfort and style, with an expansive open floor plan and floor-to-ceiling windows that maximize light and views. The sleek kitchen, spa-like bathrooms, and energy-efficient features make this a dream home for the discerning buyer.",
     },
     {
-        src: "\\src/assets/houses/Houses6.jpg",
-        srcW: "\\src/assets/houses/Houses6.webp",
+        src: house6,
+        srcW: house6W,
         title: "House Miami",
         price: "$ 7 200 000",
         description: "Experience the future of living in this ultra-modern home equipped with the latest smart home technology. From automated lighting and climate control to advanced security systems, this residence offers unparalleled convenience and luxury. Every detail has been meticulously crafted for a high-end, modern lifestyle.",
     },
     {
-        src: "\\src/assets/houses/Houses7.jpg",
-        srcW: "\\src/assets/houses/Houses7.webp",
+        src: house7,
+        srcW: house7W,
         title: "House Boca Raton",
         price: "$ 4 900 000",
         description: "A unique blend of indoor and outdoor living, this modern home features an expansive deck and landscaped garden, perfect for entertaining or relaxing. The sleek interior offers a seamless flow between living spaces, with cutting-edge finishes and a bright, airy feel throughout. Made with special design.",
     },
     {
-        src: "\\src/assets/houses/Houses8.jpg",
-        srcW: "\\src/assets/houses/Houses8.webp",
+        src: house8,
+        srcW: house8W,
         title: "Penthouse Jacksonville",
         price: "$ 4 900 000",
         description: "Step into a world of modern luxury with this private home. Featuring state-of-the-art appliances, spacious living areas, and a minimalist design, this residence offers the ideal blend of sophistication and convenience. Enjoy peaceful living in this quiet neighborhood, just minutes away from top city attractions.",
     },
     {
-        src: "\\src/assets/houses/Houses9.jpg",
-        srcW: "\\src/assets/houses/Houses9.webp",
+        src: house9,
+        srcW: house9W,
         title: "Penthouse Naples",
         price: "$ 2 750 000",
         description: "This contemporary home boasts a cutting-edge design, offering clean lines, open spaces, and luxurious finishes. With large windows, natural light floods the interiors, highlighting the elegant details throughout. Perfect for those seeking a combination of comfort, style, and functionality.",
