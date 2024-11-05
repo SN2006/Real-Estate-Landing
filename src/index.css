@@ -26,15 +26,6 @@ body{
   overflow-x: hidden;
 }
 
-canvas{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1;
-}
-
 html{
   scroll-behavior: smooth;
 }
@@ -46,7 +37,7 @@ header{
   width: 100%;
   background: rgba(15, 15, 15, 1);
   /*background: black;*/
-  z-index: 5;
+  z-index: 6;
 }
 
 :root {

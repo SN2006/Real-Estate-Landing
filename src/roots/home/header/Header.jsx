@@ -1,6 +1,8 @@
 import styles from "./Header.module.css"
 import PropTypes from "prop-types";
 import {motion} from "framer-motion";
+import {useState} from "react";
+import bgElement from "../../../assets/background/QuestionsBg1.svg";
 
 const linkVariants = {
     visible: {
@@ -11,14 +13,47 @@ const linkVariants = {
     }
 }
 
-const NavLink = ({children, to}) => {
+const openCloseButtonVariants =  {
+    hidden: {
+        opacity: 0,
+        display: "none",
+    },
+    visible: {
+        opacity: 1,
+        display: "flex",
+        transition: {
+            delay: 0.5,
+        }
+    }
+}
+
+const burgerVariants =  {
+    hidden: {
+        opacity: 0,
+        translateX: "100%",
+    },
+    visible: {
+        opacity: 1,
+        translateX: "0%",
+    }
+}
+
+const NavLink = ({children, to, onClick}) => {
     return <motion.a
+        onClick={onClick}
         variants={linkVariants}
         animate={"visible"}
         whileHover={"hover"}
         className={styles["nav__link"]}
         href={to}
-        rel="noopener noreferrer">{children}</motion.a>
+        rel="noopener noreferrer">
+        <p className={styles['nav__link__paragraph']}>{children}</p>
+        <svg className={styles['nav__link__svg']} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+                d="M16.3543 12.354L9.35426 19.354C9.25626 19.452 9.12825 19.5 9.00025 19.5C8.87225 19.5 8.74425 19.451 8.64625 19.354C8.45125 19.159 8.45125 18.842 8.64625 18.647L15.2922 12.001L8.64625 5.35499C8.45125 5.15999 8.45125 4.84296 8.64625 4.64796C8.84125 4.45296 9.15828 4.45296 9.35328 4.64796L16.3533 11.648C16.5493 11.842 16.5493 12.158 16.3543 12.354Z"
+                fill="white"/>
+        </svg>
+    </motion.a>
 }
 
 NavLink.propTypes = {
@@ -27,11 +62,24 @@ NavLink.propTypes = {
 }
 
 const Header = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const openHandler = () => {
+        setIsOpen(true);
+    }
+
+    const closeHandler = () => {
+        setIsOpen(false);
+    }
+
     return <header>
         <div className={styles.header + " container"}>
             <div
                 className={styles.logoBox}
-                onClick={() => location.href = "#hero"}
+                onClick={() => {
+                    setIsOpen(false);
+                    location.href = "#hero";
+                }}
             >
                 <svg xmlns="http://www.w3.org/2000/svg" width="97" height="22" viewBox="0 0 97 22" fill="none">
                     <path
@@ -67,7 +115,9 @@ const Header = () => {
                 </svg>
             </div>
             <nav>
-                <div className={styles.nav + " " + styles["nav--large"]}>
+                <div
+                    className={styles.nav + " " + styles['nav--large']}
+                >
                     <NavLink to={"#about-us"}>About us</NavLink>
                     <NavLink to={"#advantages"}>Advantages</NavLink>
                     <NavLink to={"#reviews"}>Reviews</NavLink>
@@ -75,14 +125,56 @@ const Header = () => {
                     <NavLink to={"#question"}>Questions</NavLink>
                     <NavLink to={"#footer"}>Contacts</NavLink>
                 </div>
+                <motion.div
+                    transition={{
+                        type: "spring",
+                        mass: 1,
+                        stiffness: 45,
+                        damping: 15,
+                    }}
+                    variants={burgerVariants}
+                    initial="hidden"
+                    animate={isOpen ? "visible" : "hidden"}
+                    className={styles.nav + " " + styles['nav--small']}
+                >
+                    <NavLink to={"#about-us"} onClick={() => setIsOpen(false)}>About us</NavLink>
+                    <NavLink to={"#advantages"} onClick={() => setIsOpen(false)}>Advantages</NavLink>
+                    <NavLink to={"#reviews"} onClick={() => setIsOpen(false)}>Reviews</NavLink>
+                    <NavLink to={"#stage"} onClick={() => setIsOpen(false)}>Stage of work</NavLink>
+                    <NavLink to={"#question"} onClick={() => setIsOpen(false)}>Questions</NavLink>
+                    <NavLink to={"#footer"} onClick={() => setIsOpen(false)}>Contacts</NavLink>
+                    <img className={styles["nav__decoration"]} src={bgElement} alt="decoration"/>
+                </motion.div>
             </nav>
-            <button className={styles['header__menu-btn']}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path
-                        d="M2.5 6C2.5 5.724 2.724 5.5 3 5.5H21C21.276 5.5 21.5 5.724 21.5 6C21.5 6.276 21.276 6.5 21 6.5H3C2.724 6.5 2.5 6.276 2.5 6ZM21 11.5H3C2.724 11.5 2.5 11.724 2.5 12C2.5 12.276 2.724 12.5 3 12.5H21C21.276 12.5 21.5 12.276 21.5 12C21.5 11.724 21.276 11.5 21 11.5ZM21 17.5H3C2.724 17.5 2.5 17.724 2.5 18C2.5 18.276 2.724 18.5 3 18.5H21C21.276 18.5 21.5 18.276 21.5 18C21.5 17.724 21.276 17.5 21 17.5Z"
-                        fill="white"/>
-                </svg>
-            </button>
+            <div className={styles["footer__burger-btns"]}>
+                <motion.button
+                    variants={openCloseButtonVariants}
+                    initial="visible"
+                    animate={isOpen ? "hidden" : "visible"}
+                    onClick={openHandler}
+                    className={styles['header__menu-btn']}
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M2.5 6C2.5 5.724 2.724 5.5 3 5.5H21C21.276 5.5 21.5 5.724 21.5 6C21.5 6.276 21.276 6.5 21 6.5H3C2.724 6.5 2.5 6.276 2.5 6ZM21 11.5H3C2.724 11.5 2.5 11.724 2.5 12C2.5 12.276 2.724 12.5 3 12.5H21C21.276 12.5 21.5 12.276 21.5 12C21.5 11.724 21.276 11.5 21 11.5ZM21 17.5H3C2.724 17.5 2.5 17.724 2.5 18C2.5 18.276 2.724 18.5 3 18.5H21C21.276 18.5 21.5 18.276 21.5 18C21.5 17.724 21.276 17.5 21 17.5Z"
+                            fill="white"/>
+                    </svg>
+                </motion.button>
+                <motion.button
+                    variants={openCloseButtonVariants}
+                    initial="hidden"
+                    animate={isOpen ? "visible" : "hidden"}
+                    onClick={closeHandler}
+                    className={styles['header__menu-btn']}
+                >
+                    Close
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                        <path
+                            d="M22.9428 22.0576C23.1866 22.3013 23.1866 22.6976 22.9428 22.9414C22.8203 23.0639 22.6603 23.1239 22.5003 23.1239C22.3403 23.1239 22.1803 23.0626 22.0578 22.9414L15.0003 15.8838L7.94282 22.9414C7.82032 23.0639 7.66032 23.1239 7.50032 23.1239C7.34032 23.1239 7.18031 23.0626 7.05781 22.9414C6.81406 22.6976 6.81406 22.3013 7.05781 22.0576L14.1153 15.0001L7.05781 7.94258C6.81406 7.69883 6.81406 7.30254 7.05781 7.05879C7.30156 6.81504 7.69781 6.81504 7.94156 7.05879L14.9991 14.1164L22.0566 7.05879C22.3003 6.81504 22.6966 6.81504 22.9403 7.05879C23.1841 7.30254 23.1841 7.69883 22.9403 7.94258L15.8841 15.0001L22.9428 22.0576Z"
+                            fill="white"/>
+                    </svg>
+                </motion.button>
+            </div>
         </div>
         <div className={styles.line}></div>
     </header>
