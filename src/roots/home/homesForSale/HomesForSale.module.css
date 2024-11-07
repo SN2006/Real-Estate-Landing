@@ -1,5 +1,6 @@
 .homes{
     padding: 44px 25px 70px;
+    overflow: hidden;
 }
 
 .homes__container{
@@ -160,7 +161,12 @@
         padding: 11px 25px 0;
     }
     .carousel{
-        margin: 51px auto;
+        width: 100vw;
+        margin: 51px -25px;
+    }
+    .carousel__container{
+        width: 2526px;
+        padding: 0 25px;
     }
 }
 
