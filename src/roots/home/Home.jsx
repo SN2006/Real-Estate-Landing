@@ -17,10 +17,10 @@ const Home = () => {
             <Advantages/>
             <HomesForSale/>
             <Reviews/>
-            <Stage/>
-            <Question/>
+            {/*<Stage/>*/}
+            {/*<Question/>*/}
         </main>
-        <Footer/>
+        {/*<Footer/>*/}
     </>
 }
 

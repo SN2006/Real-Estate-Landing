@@ -94,11 +94,16 @@ const houses_info = [
 const HouseCard = ({src, srcW, key, title, price, description}) => {
     const [isHover, setIsHover] = useState(false);
 
+    const onCardClick = () => {
+        setIsHover(prevIsHover => !prevIsHover);
+    }
+
     return <motion.div
         key={key}
         className={styles['house-card']}
         onHoverStart={() => setIsHover(true)}
         onHoverEnd={() => setIsHover(false)}
+        onClick={onCardClick}
     >
         <motion.div
             className={styles['house-card__visible']}
@@ -224,7 +229,9 @@ HouseCard.propTypes = {
 const HomesForSale = () => {
     return <section id="homes" className={styles.homes}>
         <div className={styles['homes__container']}>
-            <img src={titleImg} alt="Homes For Sales"/>
+            <div className={styles['homes__title']}>
+                <img src={titleImg} alt="Homes For Sales"/>
+            </div>
             <Carousel/>
         </div>
     </section>

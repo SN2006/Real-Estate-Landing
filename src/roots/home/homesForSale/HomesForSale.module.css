@@ -1,5 +1,5 @@
 .homes{
-    padding: 44px 20px 70px;
+    padding: 44px 25px 70px;
 }
 
 .homes__container{
@@ -72,7 +72,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: rgba(27, 27, 27, 0.8);
+    background: rgba(15, 15, 15, 0.8);
 }
 
 .house-card__description{
@@ -139,14 +139,86 @@
     transition: all 0.3s ease-in;
 }
 
+.homes__title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
 @media (max-width: 1300px) {
     .carousel {
         max-width: 766px;
     }
 }
 
-@media (max-width: 900px) {
-    .carousel {
-        max-width: 342px;
+@media (max-width: 1200px) {
+    .homes__title{
+        justify-content: center;
+    }
+    .homes{
+        padding: 11px 25px 0;
+    }
+    .carousel{
+        margin: 51px auto;
+    }
+}
+
+@media (max-width: 950px) {
+    .left-arrow-btn{
+        display: none;
+    }
+    .right-arrow-btn{
+        display: none;
+    }
+    .carousel{
+        max-width: 1000px;
+    }
+    .carousel__container{
+        gap: 26px;
+        justify-content: start;
+    }
+    .carousel__inner{
+        overflow: scroll;
+        scrollbar-width: none;
+    }
+
+    .house-card{
+        width: 252px;
+        min-width: 252px;
+        height: 293px;
+    }
+    .house-card__imagebox{
+        width: 252px;
+        height: 207px;
+    }
+    .house-card__imagebox img{
+        width: 100%;
+    }
+    .house-card__info{
+        padding: 15px 15px 0;
+    }
+    .house-card__title{
+        font-size: 18px;
+    }
+    .house-card__price{
+        font-size: 18px;
+    }
+    .house-card__hover{
+        padding: 25px;
+        height: 293px;
+        justify-content: space-between;
+        gap: 0;
+    }
+    .house-card__description{
+        font-size: 11px;
+        line-height: 14.3px;
+    }
+    .house-card__btn{
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 20px;
+        width: 130px;
+        min-height: 40px;
     }
 }

@@ -42,6 +42,7 @@ header{
 
 :root {
   background: rgba(15, 15, 15, 1);
+  scrollbar-width: none;
   /*background: black;*/
   font-synthesis: none;
   text-rendering: optimizeLegibility;
