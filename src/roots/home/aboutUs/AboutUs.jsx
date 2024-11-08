@@ -160,23 +160,25 @@ const AboutUs = () => {
                     </motion.div>
                 })}
             </div>
-            <div className={styles['about-us__statistics']}>
-                <StatisticListItem
-                    mainLine={"2020"}
-                    secondLine={"Company founding year"}
-                />
-                <StatisticListItem
-                    mainLine={"500+"}
-                    secondLine={"Projects"}
-                />
-                <StatisticListItem
-                    mainLine={"100%"}
-                    secondLine={"Satisfied customers"}
-                />
-                <StatisticListItem
-                    mainLine={"150+"}
-                    secondLine={"Employees"}
-                />
+            <div className={styles["about-us__statistics-container"]}>
+                <div className={styles['about-us__statistics']}>
+                    <StatisticListItem
+                        mainLine={"2020"}
+                        secondLine={"Company founding year"}
+                    />
+                    <StatisticListItem
+                        mainLine={"500+"}
+                        secondLine={"Projects"}
+                    />
+                    <StatisticListItem
+                        mainLine={"100%"}
+                        secondLine={"Satisfied customers"}
+                    />
+                    <StatisticListItem
+                        mainLine={"150+"}
+                        secondLine={"Employees"}
+                    />
+                </div>
             </div>
         </div>
     </section>

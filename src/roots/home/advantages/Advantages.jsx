@@ -55,23 +55,16 @@ const Advantages = () => {
     const [current, setCurrent] = useState(0);
     const [showContent, setShowContent] = useState(false);
 
-    const onTitleClick = () => {
-        setShowContent(true);
-    }
-
     const onLeftButtonClick = (e) => {
         e.stopPropagation();
         if (current > 0) setCurrent(prev => prev - 1);
-        else setShowContent(false);
+        else setCurrent(3)
     }
 
     const onRightButtonClick = (e) => {
         e.stopPropagation();
         if (current < 3) setCurrent(prev => prev + 1);
-        else {
-            setCurrent(0);
-            setShowContent(false);
-        }
+        else setCurrent(0);
     }
 
     return <section id="advantages" className={styles.advantages}>
@@ -103,7 +96,11 @@ const Advantages = () => {
             </div>
         </div>
 
-        <div onClick={onTitleClick} className={styles['advantages__container'] + " " + styles.small}>
+        <motion.div
+            className={styles['advantages__container'] + " " + styles.small}
+            onViewportEnter={() => setShowContent(true)}
+            viewport={{once: true, amount: 1}}
+        >
             <motion.div
                 transition={{
                     type: "spring",
@@ -217,7 +214,7 @@ const Advantages = () => {
                     </button>
                 </div>
             </motion.div>
-        </div>
+        </motion.div>
     </section>
 }
 

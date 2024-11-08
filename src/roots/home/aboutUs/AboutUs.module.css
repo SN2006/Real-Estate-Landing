@@ -89,7 +89,21 @@
     width: 100%;
 }
 
+.about-us__statistics-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
 @media (max-width: 1150px){
+    .about-us{
+        padding: 0;
+    }
+
     .about-us__container{
         padding: 40px 0 13px;
         gap: 60px;
@@ -97,6 +111,7 @@
     }
 
     .about-us__heading{
+        padding: 0 25px;
         width: 100%;
         justify-content: center;
     }
@@ -122,14 +137,26 @@
     .about-us__gallery{
         position: relative;
         display: flex;
+        margin: 0 25px;
+    }
+
+    .about-us__statistics-container{
+        padding: 0 25px;
     }
 }
 
 @media (max-width: 800px) {
+    .about-us__statistics-container{
+        padding: 0;
+        align-items: start;
+    }
+
     .about-us__statistics{
+        margin: 40px 0 10px;
+        min-width: 665px;
+        padding: 0 25px;
         justify-content: space-between;
         gap: 25px;
-        overflow: scroll;
         scrollbar-width: none;
     }
 
