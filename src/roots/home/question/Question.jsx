@@ -23,6 +23,7 @@ const AccordionItem = ({question, answer}) => {
                 {question}
             </p>
             <motion.img
+                className={styles['accordion__item-btn__img']}
                 src={arrow}
                 alt="arrow"
                 animate={open ? {

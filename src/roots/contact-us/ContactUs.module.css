@@ -101,7 +101,10 @@
     }
 
     .contact-us__form input{
+        height: 42px;
         font-size: 14px;
+        padding: 12px 0;
+        border-radius: 0;
     }
 
     .contact-us__form input::placeholder{

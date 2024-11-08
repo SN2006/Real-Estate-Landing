@@ -1,5 +1,5 @@
 .question{
-    padding: 68px 20px 225px;
+    padding: 68px 25px 225px;
     position: relative;
 }
 
@@ -10,6 +10,7 @@
     display: flex;
     justify-content: space-between;
     align-items: start;
+    gap: 40px;
 }
 
 .question__info{
@@ -203,4 +204,110 @@
 .question__decoration img:last-child{
     height: 100%;
     transform: translateY(-9px);
+}
+
+@media (max-width: 1200px) {
+    .question__form-container{
+        padding: 38px 32px 40px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .question{
+        padding: 0 25px 46px;
+    }
+
+    .question__container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .question__decoration{
+        display: none;
+    }
+
+    .question__info{
+        align-items: center;
+    }
+
+    .question__title{
+        margin: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .accordion__item-btn{
+        gap: 0;
+    }
+
+    .accordion__item-btn p{
+        font-size: 14px;
+        font-weight: 270;
+        line-height: 20.8px;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+    }
+
+    .accordion__item-btn__img{
+        width: 35px;
+        height: 35px;
+    }
+
+    .question__form-title{
+        margin-bottom: 11px;
+    }
+
+    .question__form input{
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 16.9px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        height: 33px;
+        padding: 8px 0;
+    }
+
+    .question__form input::placeholder{
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 16.9px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+    }
+
+    .question__form-inputs{
+        margin-bottom: 30px;
+    }
+
+    .question__form-text label{
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 16.9px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+    }
+
+    .question__form-submit{
+        height: 38px;
+        width: 95px;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 22px;
+        text-align: center;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+    }
+
+    .question__form-text textarea{
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 16.9px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        height: 77px;
+    }
 }
