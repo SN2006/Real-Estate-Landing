@@ -49,6 +49,7 @@
     line-height: 20.8px;
     text-align: left;
     color: white;
+    border-radius: 0;
 }
 
 .contact-us__form input::placeholder{

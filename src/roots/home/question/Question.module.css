@@ -126,6 +126,7 @@
     line-height: 20.8px;
     text-align: left;
     color: white;
+    border-radius: 0;
 }
 
 .question__form input::placeholder{
@@ -165,6 +166,7 @@
     line-height: 20.8px;
     text-align: left;
     color: white;
+    border-radius: 0;
 }
 
 .question__form-submit{
@@ -174,6 +176,7 @@
     border-radius: 40px 0 40px 0;
     cursor: pointer;
     border: 1px solid rgba(0, 0, 0, 1);
+    color: black;
 
     font-family: "Times New Roman", sans-serif;
     font-size: 20px;
