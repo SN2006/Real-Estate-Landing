@@ -5,6 +5,8 @@ import tickImg from "../../../assets/icons/TickIcon.svg"
 import house1Img from "../../../assets/houses/StageHouse1.jpg"
 import house2Img from "../../../assets/houses/StageHouse2.jpg"
 import house3Img from "../../../assets/houses/StageHouse3.jpg"
+import house4Img from "../../../assets/houses/AboutUsHouse1.jpg"
+import house4ImgWebp from "../../../assets/houses/AboutUsHouse1.webp"
 import house1ImgWebp from "../../../assets/houses/StageHouse1.jpg"
 import house2ImgWebp from "../../../assets/houses/StageHouse2.jpg"
 import house3ImgWebp from "../../../assets/houses/StageHouse3.jpg"
@@ -39,6 +41,12 @@ StageItem.propTypes = {
 
 const Stage = () => {
     return <section id="stage" className={styles.stage}>
+        <div className={styles['stage__house']}>
+            <picture>
+                <source type="image/webp" srcSet={house4ImgWebp}/>
+                <img src={house4Img} alt={'house'}/>
+            </picture>
+        </div>
         <div className={styles['stage__container']}>
             <div className={styles['stage__title']}>
                 <img src={headerImg} alt="Stage Of Work With Us"/>

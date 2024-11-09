@@ -160,3 +160,9 @@
         min-width: 250px;
     }
 }
+
+@media (max-width: 650px) {
+    .reviews__title img{
+        height: 18px;
+    }
+}

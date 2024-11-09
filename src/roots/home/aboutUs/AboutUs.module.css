@@ -182,6 +182,12 @@
     }
 }
 
+@media (max-width: 650px) {
+    .about-us__content img{
+        height: 18px;
+    }
+}
+
 @media (max-width: 600px) {
     .about-us__paragraph{
         font-size: 15px;

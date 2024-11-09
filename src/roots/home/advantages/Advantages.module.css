@@ -161,3 +161,9 @@
         cursor: pointer;
     }
 }
+
+@media (max-width: 650px) {
+    .advantages__title img{
+        height: 18px;
+    }
+}
