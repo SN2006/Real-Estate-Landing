@@ -1,6 +1,5 @@
 import styles from "./Stage.module.css"
 import headerImg from "../../../assets/titles/StageHeader.svg"
-import PropTypes from "prop-types";
 import tickImg from "../../../assets/icons/TickIcon.svg"
 import house1Img from "../../../assets/houses/StageHouse1.jpg"
 import house2Img from "../../../assets/houses/StageHouse2.jpg"
@@ -33,10 +32,6 @@ const StageItem = ({children}) => {
         <img src={tickImg} alt="tick"/>
         <p>{children}</p>
     </li>
-}
-
-StageItem.propTypes = {
-    children: PropTypes.string.isRequired,
 }
 
 const Stage = () => {

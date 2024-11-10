@@ -3,7 +3,6 @@ import headerImg from "../../../assets/titles/QuestionsHeader.svg"
 import bgElement1 from "../../../assets/background/QuestionsBg1.svg"
 import bgElement2 from "../../../assets/background/QuestionsBg2.svg"
 import arrow from "../../../assets/icons/ArrowBottom.svg"
-import PropTypes from "prop-types";
 import {motion} from "framer-motion";
 import {useState} from "react";
 
@@ -44,11 +43,6 @@ const AccordionItem = ({question, answer}) => {
             {answer}
         </motion.p>
     </motion.div>
-}
-
-AccordionItem.propTypes = {
-    question: PropTypes.string.isRequired,
-    answer: PropTypes.string.isRequired,
 }
 
 const Accordion = () => {

@@ -1,5 +1,4 @@
 import styles from "./Logo.module.css"
-import PropTypes from "prop-types";
 
 const Logo = ({mainGap, gap, logoWidth, logoHeight, realWidth, realHeight, estateWidth, estateHeight}) => {
     return <div className={styles.logoBox} style={{gap: mainGap + "px"}}>
@@ -86,17 +85,6 @@ const Logo = ({mainGap, gap, logoWidth, logoHeight, realWidth, realHeight, estat
             </defs>
         </svg>
     </div>
-}
-
-Logo.propTypes = {
-    mainGap: PropTypes.number,
-    gap: PropTypes.number,
-    logoWidth: PropTypes.number,
-    logoHeight: PropTypes.number,
-    realWidth: PropTypes.number,
-    realHeight: PropTypes.number,
-    estateWidth: PropTypes.number,
-    estateHeight: PropTypes.number,
 }
 
 export default Logo;
