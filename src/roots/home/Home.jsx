@@ -20,7 +20,7 @@ const Home = () => {
             <Stage/>
             <Question/>
         </main>
-        {/*<Footer/>*/}
+        <Footer/>
     </>
 }
 

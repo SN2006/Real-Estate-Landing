@@ -76,3 +76,8 @@ textarea{
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   resize: none;
 }
+
+button{
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+}
